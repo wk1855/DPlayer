@@ -28,9 +28,9 @@ function handleEvent() {
     });
 
     document.getElementById('close-dialog').addEventListener('click', () => {
-        const $openDialogBtnDom = document.getElementById('dplayer-dialog');
+        const openDialogBtnDom = document.getElementById('dplayer-dialog');
 
-        $openDialogBtnDom.setAttribute('data-show', '');
+        openDialogBtnDom.setAttribute('data-show', '');
         document.getElementById('float-dplayer').style.display = 'none';
     });
 }
@@ -60,7 +60,8 @@ function initPlayers() {
         preload: 'none',
         screenshot: true,
         video: {
-            url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+            // url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+            url: '',
             pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png',
             thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg'
         },
@@ -142,98 +143,98 @@ function initPlayers() {
         });
     }
 
-    // dp3
-    // window.dp3 = new DPlayer({
-    //     container: document.getElementById('dplayer3'),
-    //     preload: 'none',
-    //     video: {
-    //         quality: [{
-    //             name: 'HD',
-    //             url: 'https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.m3u8',
-    //             type: 'hls'
-    //         }, {
-    //             name: 'SD',
-    //             url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
-    //             type: 'normal'
-    //         }],
-    //         defaultQuality: 0,
-    //         pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png'
-    //     }
-    // });
+    dp3
+    window.dp3 = new DPlayer({
+        container: document.getElementById('dplayer3'),
+        preload: 'none',
+        video: {
+            quality: [{
+                name: 'HD',
+                url: 'https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.m3u8',
+                type: 'hls'
+            }, {
+                name: 'SD',
+                url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+                type: 'normal'
+            }],
+            defaultQuality: 0,
+            pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png'
+        }
+    });
 
-    // // dp4
-    // window.dp4 = new DPlayer({
-    //     container: document.getElementById('dplayer4'),
-    //     preload: 'none',
-    //     video: {
-    //         url: 'https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.m3u8',
-    //         type: 'hls'
-    //     }
-    // });
+    // dp4
+    window.dp4 = new DPlayer({
+        container: document.getElementById('dplayer4'),
+        preload: 'none',
+        video: {
+            url: 'https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.m3u8',
+            type: 'hls'
+        }
+    });
 
-    // // dp5
-    // window.dp5 = new DPlayer({
-    //     container: document.getElementById('dplayer5'),
-    //     preload: 'none',
-    //     video: {
-    //         url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.flv',
-    //         type: 'flv'
-    //     }
-    // });
+    // dp5
+    window.dp5 = new DPlayer({
+        container: document.getElementById('dplayer5'),
+        preload: 'none',
+        video: {
+            url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.flv',
+            type: 'flv'
+        }
+    });
 
-    // window.dp8 = new DPlayer({
-    //     container: document.getElementById('dplayer8'),
-    //     preload: 'none',
-    //     video: {
-    //         url: 'https://moeplayer.b0.upaiyun.com/dplayer/dash/hikarunara.mpd',
-    //         type: 'dash'
-    //     }
-    // });
+    window.dp8 = new DPlayer({
+        container: document.getElementById('dplayer8'),
+        preload: 'none',
+        video: {
+            url: 'https://moeplayer.b0.upaiyun.com/dplayer/dash/hikarunara.mpd',
+            type: 'dash'
+        }
+    });
 
-    // window.dp9 = new DPlayer({
-    //     container: document.getElementById('dplayer9'),
-    //     video: {
-    //         url: 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent',
-    //         type: 'webtorrent'
-    //     }
-    // });
+    window.dp9 = new DPlayer({
+        container: document.getElementById('dplayer9'),
+        video: {
+            url: 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent',
+            type: 'webtorrent'
+        }
+    });
 
-    // window.dp6 = new DPlayer({
-    //     container: document.getElementById('dplayer6'),
-    //     preload: 'none',
-    //     live: true,
-    //     danmaku: true,
-    //     apiBackend: {
-    //         read: function (endpoint, callback) {
-    //             console.log('假装 WebSocket 连接成功');
-    //             callback();
-    //         },
-    //         send: function (endpoint, danmakuData, callback) {
-    //             console.log('假装通过 WebSocket 发送数据', danmakuData);
-    //             callback();
-    //         }
-    //     },
-    //     video: {
-    //         url: 'https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.m3u8',
-    //         type: 'hls'
-    //     }
-    // });
+    window.dp6 = new DPlayer({
+        container: document.getElementById('dplayer6'),
+        preload: 'none',
+        live: true,
+        danmaku: true,
+        apiBackend: {
+            read: function (endpoint, callback) {
+                console.log('假装 WebSocket 连接成功');
+                callback();
+            },
+            send: function (endpoint, danmakuData, callback) {
+                console.log('假装通过 WebSocket 发送数据', danmakuData);
+                callback();
+            }
+        },
+        video: {
+            url: 'https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.m3u8',
+            type: 'hls'
+        }
+    });
 
-    // window.dp10 = new DPlayer({
-    //     container: document.getElementById('dplayer10'),
-    //     video: {
-    //         url: 'https://qq.webrtc.win/tv/Pear-Demo-Yosemite_National_Park.mp4',
-    //         type: 'pearplayer',
-    //         customType: {
-    //             'pearplayer': function (video, player) {
-    //                 new PearPlayer(video, {
-    //                     src: video.src,
-    //                     autoplay: player.options.autoplay
-    //                 });
-    //             }
-    //         }
-    //     }
-    // });
+    window.dp10 = new DPlayer({
+        container: document.getElementById('dplayer10'),
+        video: {
+            url: 'https://qq.webrtc.win/tv/Pear-Demo-Yosemite_National_Park.mp4',
+            type: 'pearplayer',
+            customType: {
+                'pearplayer': function (video, player) {
+                    new PearPlayer(video, {
+                        src: video.src,
+                        autoplay: player.options.autoplay
+                    });
+                }
+            }
+        }
+    });
 }
 
 function clearPlayers() {

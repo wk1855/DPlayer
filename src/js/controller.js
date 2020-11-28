@@ -227,17 +227,26 @@ class Controller {
     initScreenshotButton() {
         if (this.player.options.screenshot) {
             this.player.template.camareButton.addEventListener('click', () => {
+                // this.player.video.load();
                 const canvas = document.createElement('canvas');
                 canvas.width = this.player.video.videoWidth;
                 canvas.height = this.player.video.videoHeight;
                 canvas.getContext('2d').drawImage(this.player.video, 0, 0, canvas.width, canvas.height);
-
+                // console.log(canvas, this.player.video);
                 let dataURL;
-                canvas.toBlob((blob) => {
-                    dataURL = URL.createObjectURL(blob);
+                canvas.toBlob((callback, type, encoderOptions) => {// callback 回调函数，可获得一个单独的Blob对象参数。
+                    console.log(callback);
+                    try {
+                        dataURL = URL.createObjectURL(callback);
+                    } catch (error) {
+                        // console.log(error);
+                        this.player.notice('截图失败！视频未播放成功或者加载未完成。');
+                        URL.revokeObjectURL(dataURL);
+                        return;
+                    }
                     const link = document.createElement('a');
                     link.href = dataURL;
-                    link.download = 'DPlayer.png';
+                    link.download = '截图.png';
                     link.style.display = 'none';
                     document.body.appendChild(link);
                     link.click();
